@@ -36,7 +36,7 @@ class AnimeFragment : Fragment(R.layout.fragment_anime) {
 
     fun setItemClickListener(id: String) {
         findNavController().navigate(
-            AnimeFragmentDirections.actionGetAnimeFragmentToDetailFragment(
+            AnimeFragmentDirections.actionAnimeFragmentToDetailFragment2(
                 id.toInt()
             )
         )

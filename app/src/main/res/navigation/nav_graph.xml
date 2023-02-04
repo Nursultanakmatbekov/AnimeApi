@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/getAnimeFragment">
+    app:startDestination="@id/animeFragment">
+
 
     <fragment
-        android:id="@+id/getAnimeFragment"
+        android:id="@+id/animeFragment"
         android:name="com.example.animeapi.ui.fragments.animefragment.AnimeFragment"
-        android:label="fragment_get_anime"
+        android:label="fragment_anime"
         tools:layout="@layout/fragment_anime" >
         <action
-            android:id="@+id/action_getAnimeFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_animeFragment_to_detailFragment2"
+            app:destination="@id/detailFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/detailFragment"
+        android:id="@+id/detailFragment2"
         android:name="com.example.animeapi.ui.fragments.animefragment.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
