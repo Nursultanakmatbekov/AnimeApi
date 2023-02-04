@@ -1,4 +1,4 @@
-package com.example.animeapi.ui.fragments.detailanimefragment
+package com.example.animeapi.ui.fragments.animefragment.detail
 
 import android.os.Bundle
 import android.view.View
@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
-    private val viewModel: DetailAnimeViewModel by viewModels()
+    private val viewModel: DetailViewModel by viewModels()
     private val binding by viewBinding(FragmentDetailBinding::bind)
     private val args by navArgs<DetailFragmentArgs>()
 

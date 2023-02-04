@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/getAnimeFragment"
-        android:name="com.example.animeapi.ui.fragments.getanimefragment.GetAnimeFragment"
+        android:name="com.example.animeapi.ui.fragments.animefragment.AnimeFragment"
         android:label="fragment_get_anime"
-        tools:layout="@layout/fragment_get_anime" >
+        tools:layout="@layout/fragment_anime" >
         <action
             android:id="@+id/action_getAnimeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.animeapi.ui.fragments.detailanimefragment.DetailFragment"
+        android:name="com.example.animeapi.ui.fragments.animefragment.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <argument

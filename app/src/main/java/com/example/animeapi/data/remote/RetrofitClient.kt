@@ -26,5 +26,5 @@ class RetrofitClient {
     private fun provideLoggingInterceptor() =
         HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    val animeApiService: AnimeApiService = retrofit.create(AnimeApiService::class.java)
+    fun animeApiService(): AnimeApiService = retrofit.create(AnimeApiService::class.java)
 }
