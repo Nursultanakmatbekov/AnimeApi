@@ -10,9 +10,9 @@ import com.example.animeapi.data.models.DataItem
 import com.example.animeapi.databinding.ItemAnimeBinding
 
 class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
-    ListAdapter<DataItem, AnimeAdapter.ViewHolder>(diffUtil) {
+    ListAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
 
-    inner class ViewHolder(private val binding: ItemAnimeBinding) :
+    inner class AnimeViewHolder(private val binding: ItemAnimeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
@@ -31,8 +31,8 @@ class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
+        return AnimeViewHolder(
             ItemAnimeBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -41,7 +41,7 @@ class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         getItem(position).let {
             holder.onBind(it)
         }
