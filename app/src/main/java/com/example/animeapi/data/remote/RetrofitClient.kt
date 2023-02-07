@@ -1,6 +1,7 @@
 package com.example.animeapi.data.remote
 
 import com.example.animeapi.data.remote.apisrvicec.AnimeApiService
+import com.example.animeapi.data.remote.apisrvicec.MangaApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,7 +10,8 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitClient {
 
-    private val okHttpClient: OkHttpClient = OkHttpClient().newBuilder()
+    private val okHttpClient: OkHttpClient = OkHttpClient()
+        .newBuilder()
         .addInterceptor(provideLoggingInterceptor())
         .callTimeout(30, TimeUnit.SECONDS)
         .connectTimeout(30, TimeUnit.SECONDS)
@@ -26,5 +28,7 @@ class RetrofitClient {
     private fun provideLoggingInterceptor() =
         HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    fun animeApiService(): AnimeApiService = retrofit.create(AnimeApiService::class.java)
+    fun provideAnimeApiService() = retrofit.create(AnimeApiService::class.java)
+
+    fun provideMangaApiService() = retrofit.create(MangaApiService::class.java)
 }

@@ -3,23 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/animeFragment">
-
-
+    app:startDestination="@id/pagerFragment2">
     <fragment
-        android:id="@+id/animeFragment"
-        android:name="com.example.animeapi.ui.fragments.animefragment.AnimeFragment"
-        android:label="fragment_anime"
-        tools:layout="@layout/fragment_anime" >
+        android:id="@+id/pagerFragment2"
+        android:name="com.example.animeapi.ui.fragments.pager.PagerFragment"
+        android:label="fragment_pager"
+        tools:layout="@layout/fragment_pager" >
         <action
-            android:id="@+id/action_animeFragment_to_detailFragment2"
+            android:id="@+id/action_pagerFragment2_to_detailFragment2"
             app:destination="@id/detailFragment2" />
+        <action
+            android:id="@+id/action_pagerFragment2_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment2"
-        android:name="com.example.animeapi.ui.fragments.animefragment.detail.DetailFragment"
+        android:name="com.example.animeapi.ui.fragments.animefragment.detail.AnimeDetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_anime_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaDetailFragment"
+        android:name="com.example.animeapi.ui.fragments.manga.detail.MangaDetailFragment"
+        android:label="fragment_manga_detail"
+        tools:layout="@layout/fragment_manga_detail" >
         <argument
             android:name="id"
             app:argType="integer"
