@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7361043"
-    tools:context=".ui.fragments.manga.MangaFragment">
+    android:background="#3F2B47"
+    tools:context="com.example.animeapi.ui.fragments.manga.MangaFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_view"

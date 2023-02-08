@@ -13,13 +13,15 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun retrofitClient() = RetrofitClient()
+    fun provideRetrofitClient() = RetrofitClient()
 
     @Provides
     @Singleton
-    fun provideAnimeApiService(retrofitClient: RetrofitClient) = retrofitClient.provideAnimeApiService()
+    fun provideAnimeApiService(retrofitClient: RetrofitClient) =
+        retrofitClient.provideAnimeApiService()
 
     @Provides
     @Singleton
-    fun provideMangaApiService(retrofitClient: RetrofitClient) = retrofitClient.provideMangaApiService()
+    fun provideMangaApiService(retrofitClient: RetrofitClient) =
+        retrofitClient.provideMangaApiService()
 }

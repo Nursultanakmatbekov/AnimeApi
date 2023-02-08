@@ -6,7 +6,7 @@
     app:startDestination="@id/pagerFragment2">
     <fragment
         android:id="@+id/pagerFragment2"
-        android:name="com.example.animeapi.ui.fragments.pager.PagerFragment"
+        android:name="com.example.animeapi.ui.fragments.home.HomeFragment"
         android:label="fragment_pager"
         tools:layout="@layout/fragment_pager" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment2"
-        android:name="com.example.animeapi.ui.fragments.animefragment.detail.AnimeDetailFragment"
+        android:name="com.example.animeapi.ui.fragments.anime.detail.AnimeDetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_anime_detail" >
         <argument

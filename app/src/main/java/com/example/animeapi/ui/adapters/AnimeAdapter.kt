@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.animeapi.data.models.DataItem
-import com.example.animeapi.databinding.ItemAnimeBinding
+import com.example.animeapp.databinding.ItemAnimeBinding
 
 class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
     ListAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {

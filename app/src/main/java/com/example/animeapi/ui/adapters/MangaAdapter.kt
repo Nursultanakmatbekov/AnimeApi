@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.animeapi.data.models.DataItem
-import com.example.animeapi.databinding.ItemMangaBinding
+import com.example.animeapp.databinding.ItemMangaBinding
 
 class MangaAdapter (
     private val setItemClickListener: (id: String) -> Unit

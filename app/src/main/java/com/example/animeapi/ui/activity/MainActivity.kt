@@ -1,11 +1,11 @@
 package com.example.animeapi.ui.activity
 
-import com.example.animeapi.R
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.animeapi.databinding.ActivityMainBinding
+import com.example.animeapp.R
+import com.example.animeapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

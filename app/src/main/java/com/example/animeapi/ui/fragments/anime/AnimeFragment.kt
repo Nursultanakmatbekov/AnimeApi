@@ -1,16 +1,15 @@
-package com.example.animeapi.ui.fragments.animefragment
+package com.example.animeapi.ui.fragments.anime
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.animeapi.R
 import com.example.animeapi.base.BaseFragment
-import com.example.animeapi.databinding.FragmentAnimeBinding
 import com.example.animeapi.extensions.showText
 import com.example.animeapi.ui.adapters.AnimeAdapter
-import com.example.animeapi.ui.adapters.MangaAdapter
-import com.example.animeapi.ui.fragments.pager.PagerFragmentDirections
+import com.example.animeapi.ui.fragments.home.HomeFragmentDirections
 import com.example.animeapi.utils.Resources
+import com.example.animeapp.R
+import com.example.animeapp.databinding.FragmentAnimeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,14 +24,14 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
     }
 
     override fun setupSubscribes() {
-        subscribeToAnimeById()
+        subscribeToAnime()
     }
 
     private fun setupRecycler() = with(binding) {
         recView.adapter = animeAdapter
     }
 
-    private fun subscribeToAnimeById() {
+    private fun subscribeToAnime() {
         viewModel.fetchAnime().observe(viewLifecycleOwner) {
             when (it) {
                 is Resources.Error -> {
@@ -50,7 +49,7 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
 
     fun setItemClickListener(id: String) {
         findNavController().navigate(
-            PagerFragmentDirections.actionPagerFragment2ToDetailFragment2(
+            HomeFragmentDirections.actionPagerFragment2ToDetailFragment2(
                 id.toInt()
             )
         )

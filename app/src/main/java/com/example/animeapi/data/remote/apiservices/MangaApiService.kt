@@ -1,4 +1,4 @@
-package com.example.animeapi.data.remote.apisrvicec
+package com.example.animeapi.data.remote.apiservices
 
 import com.example.animeapi.data.models.AnimeResponse
 import com.example.animeapi.data.models.DataItem
@@ -9,7 +9,7 @@ import retrofit2.http.Path
 interface MangaApiService {
 
     @GET("manga")
-    suspend fun fetchMangaById(): AnimeResponse<DataItem>
+    suspend fun fetchManga(): AnimeResponse<DataItem>
 
     @GET("manga/{id}")
     suspend fun getSingleManga(

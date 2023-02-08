@@ -1,7 +1,7 @@
 package com.example.animeapi.data.remote
 
-import com.example.animeapi.data.remote.apisrvicec.AnimeApiService
-import com.example.animeapi.data.remote.apisrvicec.MangaApiService
+import com.example.animeapi.data.remote.apiservices.AnimeApiService
+import com.example.animeapi.data.remote.apiservices.MangaApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
