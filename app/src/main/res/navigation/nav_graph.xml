@@ -3,28 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/pagerFragment2">
+    app:startDestination="@id/homeFragment">
+
     <fragment
-        android:id="@+id/pagerFragment2"
+        android:id="@+id/homeFragment"
         android:name="com.example.animeapi.ui.fragments.home.HomeFragment"
-        android:label="fragment_pager"
-        tools:layout="@layout/fragment_pager" >
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_pagerFragment2_to_detailFragment2"
-            app:destination="@id/detailFragment2" />
-        <action
-            android:id="@+id/action_pagerFragment2_to_mangaDetailFragment"
+            android:id="@+id/action_homeFragment_to_mangaDetailFragment"
             app:destination="@id/mangaDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment2"
-        android:name="com.example.animeapi.ui.fragments.anime.detail.AnimeDetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_anime_detail" >
-        <argument
-            android:name="id"
-            app:argType="integer"
-            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_homeFragment_to_animeDetailFragment"
+            app:destination="@id/animeDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/mangaDetailFragment"
@@ -36,4 +27,15 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/animeDetailFragment"
+        android:name="com.example.animeapi.ui.fragments.anime.detail.AnimeDetailFragment"
+        android:label="fragment_anime_detail"
+        tools:layout="@layout/fragment_anime_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
 </navigation>

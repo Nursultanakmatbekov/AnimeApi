@@ -12,7 +12,7 @@ import com.example.animeapp.databinding.FragmentAnimeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AnimeDetailFragment : BaseFragment<FragmentAnimeDetailBinding, AnimeDetailViewModel>(
+class AnimeDetailFragment: BaseFragment<FragmentAnimeDetailBinding, AnimeDetailViewModel>(
     R.layout.fragment_anime_detail
 ) {
 
@@ -26,7 +26,7 @@ class AnimeDetailFragment : BaseFragment<FragmentAnimeDetailBinding, AnimeDetail
 
     private fun subscribeToAnimeById() = with(binding) {
         viewModel.animeDetail(args.id).observe(viewLifecycleOwner) {
-            when (it) {
+            when(it) {
                 is Resources.Error -> {
                     showText("Error")
                 }

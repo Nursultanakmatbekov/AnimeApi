@@ -5,11 +5,15 @@ import com.example.animeapi.data.models.DataItem
 import com.example.animeapi.data.models.detail.AnimeDetail
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface MangaApiService {
 
     @GET("manga")
-    suspend fun fetchManga(): AnimeResponse<DataItem>
+    suspend fun fetchManga(
+        @Query("page[limit]") limit: Int,
+        @Query("page[offset]") offset: Int
+    ): AnimeResponse<DataItem>
 
     @GET("manga/{id}")
     suspend fun getSingleManga(

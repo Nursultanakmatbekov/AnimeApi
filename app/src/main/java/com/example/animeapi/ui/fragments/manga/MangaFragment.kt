@@ -1,59 +1,45 @@
 package com.example.animeapi.ui.fragments.manga
 
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapi.base.BaseFragment
 import com.example.animeapi.extensions.showText
+import com.example.animeapi.ui.adapters.AnimeAdapter
 import com.example.animeapi.ui.adapters.MangaAdapter
+import com.example.animeapi.ui.fragments.anime.AnimeViewModel
 import com.example.animeapi.ui.fragments.home.HomeFragmentDirections
 import com.example.animeapi.utils.Resources
 import com.example.animeapp.R
+import com.example.animeapp.databinding.FragmentAnimeBinding
 import com.example.animeapp.databinding.FragmentMangaBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layout.fragment_manga) {
+class MangaFragment : BaseFragment<FragmentAnimeBinding, MangaViewModel>(R.layout.fragment_anime) {
 
-    override val binding by viewBinding(FragmentMangaBinding::bind)
+    override val binding by viewBinding(FragmentAnimeBinding::bind)
     override val viewModel: MangaViewModel by viewModels()
-    private val mangaAdapter = MangaAdapter(this::onClickListeners)
-
-    override fun initialize() {
-        setupRecycler()
-    }
+    private val mangaAdapter = MangaAdapter(this::setItemClickListener)
 
     override fun setupSubscribes() {
-        subscribeToManga()
-    }
-
-    private fun setupRecycler() = with(binding) {
-        recView.adapter = mangaAdapter
-    }
-
-    private fun subscribeToManga() {
-        viewModel.fetchManga().observe(viewLifecycleOwner) {
-            when (it) {
-                is Resources.Error -> {
-                    showText("Error")
-                }
-                is Resources.Loading -> {
-                    showText("Loading")
-                }
-                is Resources.Success -> {
-                    it.data?.let { response ->
-                        mangaAdapter.submitList(response.data)
-                    }
-                }
+        viewModel.fetchManga().observe(viewLifecycleOwner){
+            lifecycleScope.launch {
+                mangaAdapter.submitData(it)
             }
         }
     }
 
-    private fun onClickListeners(id: String) {
+    override fun initialize() {
+        binding.recView.adapter = mangaAdapter
+    }
+
+
+    private fun setItemClickListener(id: String){
         findNavController().navigate(
-            HomeFragmentDirections.actionPagerFragment2ToMangaDetailFragment(
-                id.toInt()
-            )
+            HomeFragmentDirections.actionHomeFragmentToAnimeDetailFragment(id.toInt())
         )
     }
 }

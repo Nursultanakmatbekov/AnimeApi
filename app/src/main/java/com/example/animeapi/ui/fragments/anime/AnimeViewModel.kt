@@ -1,5 +1,7 @@
 package com.example.animeapi.ui.fragments.anime
 
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import com.example.animeapi.base.BaseViewModel
 import com.example.animeapi.data.repositories.anime.AnimeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -9,5 +11,5 @@ import javax.inject.Inject
 class AnimeViewModel @Inject constructor(private val repository: AnimeRepository) :
     BaseViewModel() {
 
-    fun fetchAnime() = repository.fetchAnime()
+    fun fetchAnime() = repository.fetchAnime().cachedIn(viewModelScope)
 }
