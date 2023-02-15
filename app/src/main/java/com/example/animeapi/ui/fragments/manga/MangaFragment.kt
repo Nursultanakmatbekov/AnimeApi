@@ -18,9 +18,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MangaFragment : BaseFragment<FragmentAnimeBinding, MangaViewModel>(R.layout.fragment_anime) {
+class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layout.fragment_manga) {
 
-    override val binding by viewBinding(FragmentAnimeBinding::bind)
+    override val binding by viewBinding(FragmentMangaBinding::bind)
     override val viewModel: MangaViewModel by viewModels()
     private val mangaAdapter = MangaAdapter(this::setItemClickListener)
 
@@ -35,7 +35,6 @@ class MangaFragment : BaseFragment<FragmentAnimeBinding, MangaViewModel>(R.layou
     override fun initialize() {
         binding.recView.adapter = mangaAdapter
     }
-
 
     private fun setItemClickListener(id: String){
         findNavController().navigate(

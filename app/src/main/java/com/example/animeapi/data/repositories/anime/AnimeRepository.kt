@@ -6,14 +6,13 @@ import androidx.paging.liveData
 import com.example.animeapi.base.BaseRepository
 import com.example.animeapi.data.pagingsources.AnimePagingSource
 import com.example.animeapi.data.remote.apiservices.AnimeApiService
-import com.example.animeapi.data.remote.apiservices.MangaApiService
 import javax.inject.Inject
 
 class AnimeRepository @Inject constructor(
     private val animeApiService: AnimeApiService,
 ) : BaseRepository() {
 
-    fun fetchAnime()  = Pager(
+    fun fetchAnime()  =  Pager(
         PagingConfig(pageSize = 20, initialLoadSize = 10)
     ) {
         AnimePagingSource(animeApiService)

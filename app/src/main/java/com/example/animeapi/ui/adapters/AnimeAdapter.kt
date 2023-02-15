@@ -4,23 +4,22 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.animeapi.data.models.DataItem
-import com.example.animeapp.databinding.ItemAnimeBinding
+import com.example.animeapp.databinding.ItemBinding
 
 class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
     PagingDataAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
 
-    inner class AnimeViewHolder(private val binding: ItemAnimeBinding) :
+    inner class AnimeViewHolder(private val binding: ItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
 
         fun onBind(item: DataItem) = with(binding) {
-            Glide.with(binding.imItem.context)
+            Glide.with(binding.imView.context)
                 .load(item.attributes.posterImage.original)
-                .into(binding.imItem)
+                .into(binding.imView)
             binding.tvNameItem.text = item.attributes.titles.enJp
         }
 
@@ -33,7 +32,7 @@ class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
         return AnimeViewHolder(
-            ItemAnimeBinding.inflate(
+            ItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false
             )
