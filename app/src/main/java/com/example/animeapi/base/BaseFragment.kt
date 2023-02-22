@@ -37,6 +37,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
 
     protected open fun setupSubscribes() {
     }
+
     protected open fun <T> Flow<Resources<T>>.subscribe(
         state: ((state: Resources<T>) -> Unit)? = null,
         onError: (error: String) -> Unit,

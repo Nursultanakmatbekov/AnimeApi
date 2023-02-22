@@ -5,8 +5,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapi.base.BaseFragment
-import com.example.animeapi.extensions.showText
-import com.example.animeapi.ui.adapters.AnimeAdapter
 import com.example.animeapi.ui.adapters.MangaAdapter
 import com.example.animeapi.ui.fragments.home.HomeFragmentDirections
 import com.excample.animeapp.R
@@ -35,7 +33,7 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
 
     private fun setItemClickListener(id: String){
         findNavController().navigate(
-            HomeFragmentDirections.actionHomeFragmentToAnimeDetailFragment(id.toInt())
+            HomeFragmentDirections.actionHomeFragmentToMangaDetailFragment(id.toInt())
         )
     }
 }

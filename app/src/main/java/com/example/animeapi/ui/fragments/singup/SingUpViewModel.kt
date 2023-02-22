@@ -1,4 +1,4 @@
-package com.example.animeapi.ui.fragments
+package com.example.animeapi.ui.fragments.singup
 
 import com.example.animeapi.base.BaseViewModel
 import com.example.animeapi.data.models.auth.AuthModel

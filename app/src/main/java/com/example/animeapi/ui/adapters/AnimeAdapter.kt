@@ -15,7 +15,6 @@ class AnimeAdapter(val setItemClickListener: (id: String) -> Unit) :
     inner class AnimeViewHolder(private val binding: ItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-
         fun onBind(item: DataItem) = with(binding) {
             Glide.with(binding.imView.context)
                 .load(item.attributes.posterImage.original)

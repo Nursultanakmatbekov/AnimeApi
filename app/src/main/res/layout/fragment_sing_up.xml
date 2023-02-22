@@ -7,32 +7,37 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/img"
-    tools:context="com.example.animeapi.ui.fragments.SingUpFragment">
+    tools:context="com.example.animeapi.ui.fragments.singup.SingUpFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#C43E0F3D"
+        app:cardCornerRadius="10dp">
 
         <EditText
             android:id="@+id/ed_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Введите логин"
+            android:textColor="@color/white"
             android:padding="10dp"/>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="40dp">
+        android:layout_height="40dp"
+        android:backgroundTint="#C43E0F3D"
+        app:cardCornerRadius="10dp">
 
         <EditText
             android:id="@+id/ed_password"
-            android:inputType="numberPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Введите пароль"
+            android:textColor="@color/white"
             android:padding="10dp"/>
 
     </androidx.cardview.widget.CardView>
@@ -45,6 +50,7 @@
         android:layout_marginTop="10dp"
         android:textAllCaps="false"
         android:text="Зарегистрироваться"
-        android:backgroundTint="@color/black"/>
+        android:textColor="@color/white"
+        android:backgroundTint="#C43E0F3D" />
 
 </LinearLayout>
