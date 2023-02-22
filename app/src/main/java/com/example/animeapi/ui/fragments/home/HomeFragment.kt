@@ -5,8 +5,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapi.ui.adapters.HomeAdapter
-import com.example.animeapp.R
-import com.example.animeapp.databinding.FragmentHomeBinding
+import com.excample.animeapp.R
+import com.excample.animeapp.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment(R.layout.fragment_home) {

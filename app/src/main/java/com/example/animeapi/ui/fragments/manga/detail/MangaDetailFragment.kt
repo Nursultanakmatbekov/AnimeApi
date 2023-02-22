@@ -1,5 +1,6 @@
 package com.example.animeapi.ui.fragments.manga.detail
 
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -7,8 +8,8 @@ import com.bumptech.glide.Glide
 import com.example.animeapi.base.BaseFragment
 import com.example.animeapi.extensions.showText
 import com.example.animeapi.utils.Resources
-import com.example.animeapp.R
-import com.example.animeapp.databinding.FragmentMangaDetailBinding
+import com.excample.animeapp.R
+import com.excample.animeapp.databinding.FragmentMangaDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,21 +26,17 @@ class MangaDetailFragment : BaseFragment<FragmentMangaDetailBinding, MangaDetail
     }
 
     private fun subscribeToMangaId() = with(binding) {
-        viewModel.mangaDetail(args.id).observe(viewLifecycleOwner) {
-            when (it) {
-                is Resources.Error -> {
-                    showText("Error")
-                }
-                is Resources.Loading -> {
-                    showText("Loading")
-                }
-                is Resources.Success -> {
+        viewModel.mangaDetail(args.id).subscribe(
+            onError = {
+                Toast.makeText(requireContext(), "asd", Toast.LENGTH_SHORT).show()
+            },
+            onSuccess = {
+                it.data.let {
                     Glide.with(ivFullscreenManga.context)
-                        .load(it.data?.data?.attributes?.posterImage?.original)
+                        .load(it.attributes.posterImage.original)
                         .into(ivFullscreenManga)
-                    tvNameDetailManga.text = it.data?.data?.attributes?.titles?.enJp
+                    tvNameDetailManga.text = it.attributes.titles.enJp
                 }
-            }
-        }
+            })
     }
 }

@@ -23,16 +23,12 @@ data class Attributes(
     val averageRating: String,
     @SerializedName("showType")
     val showType: String,
-    @SerializedName("abbreviatedTitles")
-    val abbreviatedTitles: List<String>?,
     @SerializedName("slug")
     val slug: String,
     @SerializedName("episodeLength")
     val episodeLength: Int,
     @SerializedName("updatedAt")
     val updatedAt: String,
-    @SerializedName("nsfw")
-    val nsfw: Boolean = false,
     @SerializedName("synopsis")
     val synopsis: String,
     @SerializedName("titles")

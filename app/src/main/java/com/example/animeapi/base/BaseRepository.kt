@@ -1,11 +1,11 @@
 package com.example.animeapi.base
 
-import androidx.lifecycle.liveData
 import com.example.animeapi.utils.Resources
+import kotlinx.coroutines.flow.flow
 
 abstract class BaseRepository {
 
-    protected open fun <T> doRequest(request: suspend () -> T) = liveData {
+    protected open fun <T> doRequest(request: suspend () -> T) = flow {
         emit(Resources.Loading())
         try {
             emit(Resources.Success(request()))
