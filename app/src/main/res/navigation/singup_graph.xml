@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/singup_graph"
+    app:startDestination="@id/singUpFragment2">
+
+    <fragment
+        android:id="@+id/singUpFragment2"
+        android:name="com.example.animeapi.ui.fragments.singup.SingUpFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sing_up" />
+</navigation>
