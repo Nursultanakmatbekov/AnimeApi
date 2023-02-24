@@ -10,7 +10,6 @@ plugins {
 
     // SafeArgs
     id("androidx.navigation.safeargs.kotlin")
-
 }
 
 android {
