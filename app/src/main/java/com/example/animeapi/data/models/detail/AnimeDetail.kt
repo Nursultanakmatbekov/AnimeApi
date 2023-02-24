@@ -7,4 +7,3 @@ data class AnimeDetail(
     @SerializedName("data")
     val data: DataItem
 )
-

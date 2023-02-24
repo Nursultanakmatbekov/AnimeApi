@@ -1,8 +1,9 @@
 package com.example.animeapi.ui.fragments.singup
 
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapi.base.BaseFragment
 import com.example.animeapi.data.models.auth.AuthModel
@@ -24,9 +25,14 @@ class SingUpFragment :
 
     override fun setupSubscribes() = with(binding) {
         binding.btnSingUp.setOnClickListener {
-            val email = edLogin.text.toString()
+            val login = edLogin.text.toString()
             val password = edPassword.text.toString()
-            val authModel = AuthModel("password", email, password)
+
+            if (login.isEmpty() && password.isEmpty()) {
+                Toast.makeText(requireContext(), "Введите данные", Toast.LENGTH_SHORT).show()
+            }
+
+            val authModel = AuthModel("password", login, password)
             viewModel.postUserData(authModel).subscribe(
                 onError = {
                     Log.e("tag", "log: $it")
@@ -39,10 +45,8 @@ class SingUpFragment :
                             accessToken = token.accessToken
                             refreshToken = token.refreshToken
                         }
-                        findNavController().navigate(
-                            R.id.action_singUpFragment_to_homeFragment
-                        )
-
+                        requireActivity().findNavController(R.id.nav_host_fragment_container)
+                            .navigate(R.id.action_singUpFlowFragment_to_homeFlowFragment)
                     }
                 })
         }

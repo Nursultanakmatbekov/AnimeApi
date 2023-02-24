@@ -6,8 +6,6 @@ import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.example.animeapi.base.BaseFragment
-import com.example.animeapi.extensions.showText
-import com.example.animeapi.utils.Resources
 import com.excample.animeapp.R
 import com.excample.animeapp.databinding.FragmentMangaDetailBinding
 import dagger.hilt.android.AndroidEntryPoint

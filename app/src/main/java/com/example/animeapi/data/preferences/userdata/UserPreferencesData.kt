@@ -3,6 +3,7 @@ package com.example.animeapi.data.preferences.userdata
 import com.example.animeapi.data.preferences.sheredpref.PreferencesHelper
 
 class UserPreferencesData(
+
     private val preferences: PreferencesHelper,
 
     private val IS_AUTHORIZED: String = "is_authorized",

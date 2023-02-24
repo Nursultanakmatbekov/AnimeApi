@@ -9,10 +9,10 @@ import com.bumptech.glide.Glide
 import com.example.animeapi.data.models.DataItem
 import com.excample.animeapp.databinding.ItemMangaBinding
 
-class MangaAdapter (
+class MangaAdapter(
     private val setItemClickListener: (id: String) -> Unit
 ) :
-    PagingDataAdapter <DataItem, MangaAdapter.MangaViewHolder>(diffUtil) {
+    PagingDataAdapter<DataItem, MangaAdapter.MangaViewHolder>(diffUtil) {
 
     inner class MangaViewHolder(private val binding: ItemMangaBinding) :
         RecyclerView.ViewHolder(binding.root) {

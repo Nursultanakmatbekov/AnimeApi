@@ -20,7 +20,7 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
     private val mangaAdapter = MangaAdapter(this::setItemClickListener)
 
     override fun setupSubscribes() {
-        viewModel.fetchManga().observe(viewLifecycleOwner){
+        viewModel.fetchManga().observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 mangaAdapter.submitData(it)
             }
@@ -31,9 +31,9 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
         binding.recView.adapter = mangaAdapter
     }
 
-    private fun setItemClickListener(id: String){
+    private fun setItemClickListener(id: String) {
         findNavController().navigate(
-            HomeFragmentDirections.actionHomeFragmentToMangaDetailFragment(id.toInt())
+            HomeFragmentDirections.actionHomeFragment2ToMangaDetailFragment2(id.toInt())
         )
     }
 }

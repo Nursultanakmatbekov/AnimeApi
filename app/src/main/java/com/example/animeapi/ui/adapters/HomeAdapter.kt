@@ -12,7 +12,7 @@ class HomeAdapter(fragment: Fragment) :
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 ->{
+            0 -> {
                 AnimeFragment()
             }
             else -> MangaFragment()

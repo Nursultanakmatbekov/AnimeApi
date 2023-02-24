@@ -6,7 +6,6 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
-import com.bumptech.glide.load.engine.Resource
 import com.example.animeapi.utils.Resources
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

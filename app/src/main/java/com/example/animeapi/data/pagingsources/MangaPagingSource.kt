@@ -5,7 +5,6 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.bumptech.glide.load.HttpException
 import com.example.animeapi.data.models.DataItem
-import com.example.animeapi.data.remote.apiservices.AnimeApiService
 import com.example.animeapi.data.remote.apiservices.MangaApiService
 import java.io.IOException
 
@@ -17,7 +16,8 @@ class MangaPagingSource(private val service: MangaApiService) :
             val page = params.key ?: DEFAULT_PAGE_NUMBER
 
             val response = service.fetchManga(params.loadSize, page)
-            val nextPageNumber = Uri.parse(response.links.next).getQueryParameter("page[offset]")!!.toInt()
+            val nextPageNumber =
+                Uri.parse(response.links.next).getQueryParameter("page[offset]")!!.toInt()
 
             return LoadResult.Page(
                 data = response.data,
